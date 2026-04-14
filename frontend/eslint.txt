@@ -1,0 +1,27 @@
+﻿
+E:\modern-site-replica-main\frontend\src\components\PixelTransition4.tsx
+  83:9  warning  The 'config' conditional could make the dependencies of useEffect Hook (at line 195) change on every render. Move it inside the useEffect callback. Alternatively, wrap the initialization of 'config' in its own useMemo() Hook  react-hooks/exhaustive-deps
+
+E:\modern-site-replica-main\frontend\src\components\ui\badge.tsx
+  29:17  warning  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  react-refresh/only-export-components
+
+E:\modern-site-replica-main\frontend\src\components\ui\button.tsx
+  47:18  warning  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  react-refresh/only-export-components
+
+E:\modern-site-replica-main\frontend\src\components\ui\form.tsx
+  129:10  warning  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  react-refresh/only-export-components
+
+E:\modern-site-replica-main\frontend\src\components\ui\navigation-menu.tsx
+  111:3  warning  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  react-refresh/only-export-components
+
+E:\modern-site-replica-main\frontend\src\components\ui\sidebar.tsx
+  636:3  warning  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  react-refresh/only-export-components
+
+E:\modern-site-replica-main\frontend\src\components\ui\sonner.tsx
+  27:19  warning  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  react-refresh/only-export-components
+
+E:\modern-site-replica-main\frontend\src\components\ui\toggle.tsx
+  37:18  warning  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  react-refresh/only-export-components
+
+Γ£û 8 problems (0 errors, 8 warnings)
+

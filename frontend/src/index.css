@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 213 50% 13%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 213 50% 13%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 213 50% 13%;
+
+    --primary: 213 63% 13%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 100%;
+    --secondary-foreground: 213 63% 13%;
+
+    --muted: 210 20% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 37 90% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 213 63% 13%;
+
+    --radius: 0.5rem;
+
+    /* Custom tokens */
+    --navy: 213 63% 13%;
+    --navy-light: 213 50% 20%;
+    --gold: 37 90% 55%;
+    --gold-dark: 37 80% 45%;
+    --gray-light: 220 14% 96%;
+    --gray-medium: 220 9% 46%;
+
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Open Sans', sans-serif;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+    overflow-x: clip;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  img, video {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    image-rendering: high-quality;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+  }
+}
+
+@layer components {
+  .section-padding {
+    @apply py-12 md:py-20 px-2 sm:px-4 md:px-8 lg:px-16;
+  }
+
+  .section-title {
+    @apply text-sm font-semibold tracking-widest uppercase mb-3;
+    color: hsl(var(--gold));
+  }
+
+  .section-heading {
+    @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight;
+    font-family: var(--font-heading);
+    color: hsl(var(--navy));
+  }
+
+  .overlay-dark {
+    @apply absolute inset-0;
+    background: rgba(11, 29, 54, 0.75);
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+  }
+
+  .nav-link {
+    @apply relative font-medium text-sm uppercase tracking-wider transition-colors duration-300;
+  }
+
+  .nav-link::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-full h-0.5 scale-x-0 transition-transform duration-300 origin-bottom-right;
+    background: hsl(var(--gold));
+  }
+
+  .nav-link:hover::after {
+    @apply scale-x-100 origin-bottom-left;
+  }
+
+  .btn-primary {
+    @apply px-8 py-3 font-semibold text-sm uppercase tracking-wider transition-all duration-300;
+    font-family: var(--font-heading);
+    background: hsl(var(--gold));
+    color: hsl(var(--navy));
+  }
+
+  .btn-primary:hover {
+    background: hsl(var(--gold-dark));
+  }
+
+  .btn-outline-light {
+    @apply px-8 py-3 font-semibold text-sm uppercase tracking-wider border-2 transition-all duration-300;
+    font-family: var(--font-heading);
+    border-color: hsl(var(--secondary));
+    color: hsl(var(--secondary));
+  }
+
+  .btn-outline-light:hover {
+    background: hsl(var(--secondary));
+    color: hsl(var(--navy));
+  }
+
+  .topbar-bg {
+    background: hsl(var(--navy));
+  }
+
+  .navbar-bg {
+    background: hsl(var(--secondary));
+  }
+
+  .navy-bg {
+    background: hsl(var(--navy));
+  }
+
+  .gold-text {
+    color: hsl(var(--gold));
+  }
+
+  .navy-text {
+    color: hsl(var(--navy));
+  }
+
+  .footer-bg {
+    background: hsl(213 63% 10%);
+  }
+}
+
+@layer utilities {
+  /* ── Fade Up ───────────────────────────────── */
+  .animate-fade-up {
+    animation: fadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    opacity: 0;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(36px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── Fade Left (slide in from left) ─────────── */
+  .animate-fade-left {
+    animation: fadeLeft 0.75s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    opacity: 0;
+  }
+
+  @keyframes fadeLeft {
+    from { opacity: 0; transform: translateX(-48px); }
+    to   { opacity: 1; transform: translateX(0); }
+  }
+
+  /* ── Fade Right (slide in from right) ───────── */
+  .animate-fade-right {
+    animation: fadeRight 0.75s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    opacity: 0;
+  }
+
+  @keyframes fadeRight {
+    from { opacity: 0; transform: translateX(48px); }
+    to   { opacity: 1; transform: translateX(0); }
+  }
+
+  /* ── Scale In ────────────────────────────────── */
+  .animate-scale-in {
+    animation: scaleIn 0.65s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    opacity: 0;
+  }
+
+  @keyframes scaleIn {
+    from { opacity: 0; transform: scale(0.88); }
+    to   { opacity: 1; transform: scale(1); }
+  }
+
+  /* ── Count‑Up (stats) ────────────────────────── */
+  @keyframes countUp {
+    from { opacity: 0; transform: scale(0.5); }
+    to   { opacity: 1; transform: scale(1); }
+  }
+
+  .animate-count {
+    animation: countUp 0.5s ease-out forwards;
+  }
+
+  /* ── List‑item stagger helper ────────────────── */
+  .animate-fade-up-list {
+    animation: fadeUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    opacity: 0;
+  }
+}
