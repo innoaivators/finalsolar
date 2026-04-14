@@ -50,7 +50,7 @@ const EnquiryDialog: React.FC<EnquiryDialogProps> = ({ productName, trigger, cla
 
     try {
       // In production, you would point this to your actual deployed backend URL
-      const response = await fetch("http://localhost:5000/api/enquiry", {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/enquiry`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),

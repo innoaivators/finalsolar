@@ -1,5 +1,5 @@
 import ServicePageTemplate from "@/components/ServicePageTemplate";
-import img from "@/assets/product-catnjoy.jpg";
+import img from "@/assets/pet_food_bg.png";
 
 const CatNJoyPage = () => (
   <ServicePageTemplate

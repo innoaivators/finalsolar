@@ -1,5 +1,5 @@
 import ServicePageTemplate from "@/components/ServicePageTemplate";
-import img from "@/assets/product-perfecta.jpg";
+import img from "@/assets/pet_food_bg.png";
 
 const PerfectaPage = () => (
   <ServicePageTemplate
