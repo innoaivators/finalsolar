@@ -2,7 +2,7 @@ import { Phone, Mail, Facebook, Linkedin, Instagram, Globe } from "lucide-react"
 
 const TopBar = () => {
   return (
-    <div className="topbar-bg hidden md:block">
+    <div className="topbar-bg hidden lg:block">
       <div className="container mx-auto flex items-center justify-between h-9 text-xs">
         <div className="flex items-center gap-6">
           <span className="text-primary-foreground opacity-90">Your Trusted 24 Hours Service Provider!</span>
