@@ -51,7 +51,7 @@ const Navbar = () => {
   }, [location.pathname]);
 
   return (
-    <nav className={`sticky top-0 z-50 transition-all duration-500 ease-in-out ${scrolled ? "bg-white/75 backdrop-blur-xl shadow-[0_15px_40px_-15px_rgba(0,0,0,0.2)] border-b border-white/60" : "bg-gradient-to-r from-slate-50 via-white to-slate-50 shadow-sm border-b border-slate-100"}`}>
+    <nav className={`fixed w-full z-[100] transition-all duration-500 ease-in-out ${scrolled ? "top-0 bg-white/75 backdrop-blur-xl shadow-[0_15px_40px_-15px_rgba(0,0,0,0.2)] border-b border-white/60" : "top-0 xl:top-9 bg-gradient-to-r from-slate-50 via-white to-slate-50 shadow-sm border-b border-slate-100"}`}>
       <div className={`container mx-auto relative flex items-center justify-between transition-all duration-300 ${scrolled ? "h-16" : "h-20"} px-4`}>
         <Link to="/" className={`flex items-center h-full transition-all duration-500 group`}>
           <div 
