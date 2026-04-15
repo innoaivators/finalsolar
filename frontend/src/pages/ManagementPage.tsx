@@ -1,5 +1,5 @@
 import PageBanner from "@/components/PageBanner";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/nav_logo.jpeg";
 import { ChevronRight } from "lucide-react";
 import Lottie from "lottie-react";
 import managementAnimation from "@/assets/animations/JSP Working.json";
@@ -33,9 +33,9 @@ const ManagementPage = () => {
 
           <div className="mt-20 flex flex-col items-center">
             <Lottie animationData={managementAnimation} loop={true} className="w-full max-w-3xl h-auto mb-8 animate-fade-in drop-shadow-sm" />
-            <div className="bg-white p-8 rounded-3xl shadow-xl border border-slate-100 flex items-center gap-6 max-w-2xl">
-              <div className="p-4 bg-white rounded-2xl border border-slate-100 shadow-sm">
-                <img src={logo} alt="Metallica Logo" className="h-10 w-auto" />
+            <div className="bg-white p-6 md:p-8 rounded-3xl shadow-xl border border-slate-100 flex flex-col sm:flex-row items-center gap-6 md:gap-8 max-w-3xl">
+              <div className="p-4 bg-slate-50/50 rounded-2xl border border-slate-100 shadow-inner flex items-center justify-center min-w-[120px] min-h-[120px] flex-shrink-0">
+                <img src={logo} alt="Metallica Logo" className="h-20 w-auto object-contain mix-blend-multiply contrast-125 saturate-150" />
               </div>
               <div>
                 <h4 className="font-heading font-bold navy-text text-lg">Metallica General Trading & Contracting</h4>
