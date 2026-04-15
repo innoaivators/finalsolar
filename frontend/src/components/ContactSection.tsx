@@ -155,40 +155,52 @@ const ContactSection = () => {
             <h3 className="text-2xl font-heading font-bold navy-text mb-8">Send us a Message</h3>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
+                <div className="space-y-2">
+                  <label className="text-sm font-bold text-navy/80 ml-1">Full Name <span className="text-red-500">*</span></label>
+                  <input
+                    type="text"
+                    placeholder="John Doe"
+                    required
+                    value={form.name}
+                    onChange={(e) => setForm({ ...form, name: e.target.value })}
+                    className="w-full px-5 py-4 rounded-xl border border-slate-300 bg-white text-navy font-medium text-sm placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold hover:border-slate-400 transition-all shadow-sm"
+                  />
+                </div>
+                <div className="space-y-2">
+                  <label className="text-sm font-bold text-navy/80 ml-1">Email Address <span className="text-red-500">*</span></label>
+                  <input
+                    type="email"
+                    placeholder="john@example.com"
+                    required
+                    value={form.email}
+                    onChange={(e) => setForm({ ...form, email: e.target.value })}
+                    className="w-full px-5 py-4 rounded-xl border border-slate-300 bg-white text-navy font-medium text-sm placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold hover:border-slate-400 transition-all shadow-sm"
+                  />
+                </div>
+              </div>
+              <div className="space-y-2">
+                <label className="text-sm font-bold text-navy/80 ml-1">Phone Number</label>
                 <input
-                  type="text"
-                  placeholder="Full Name"
-                  required
-                  value={form.name}
-                  onChange={(e) => setForm({ ...form, name: e.target.value })}
-                  className="w-full px-5 py-4 rounded-xl border border-slate-200 bg-slate-50 text-slate-900 font-body text-sm focus:outline-none focus:ring-2 focus:ring-gold/30 transition-all"
-                />
-                <input
-                  type="email"
-                  placeholder="Email Address"
-                  required
-                  value={form.email}
-                  onChange={(e) => setForm({ ...form, email: e.target.value })}
-                  className="w-full px-5 py-4 rounded-xl border border-slate-200 bg-slate-50 text-slate-900 font-body text-sm focus:outline-none focus:ring-2 focus:ring-gold/30 transition-all"
+                  type="tel"
+                  placeholder="+965 XXXX XXXX"
+                  value={form.phone}
+                  onChange={(e) => setForm({ ...form, phone: e.target.value })}
+                  className="w-full px-5 py-4 rounded-xl border border-slate-300 bg-white text-navy font-medium text-sm placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold hover:border-slate-400 transition-all shadow-sm"
                 />
               </div>
-              <input
-                type="tel"
-                placeholder="Phone Number"
-                value={form.phone}
-                onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                className="w-full px-5 py-4 rounded-xl border border-slate-200 bg-slate-50 text-slate-900 font-body text-sm focus:outline-none focus:ring-2 focus:ring-gold/30 transition-all"
-              />
-              <textarea
-                placeholder="Your Message..."
-                rows={4}
-                required
-                value={form.message}
-                onChange={(e) => setForm({ ...form, message: e.target.value })}
-                className="w-full px-5 py-4 rounded-xl border border-slate-200 bg-slate-50 text-slate-900 font-body text-sm focus:outline-none focus:ring-2 focus:ring-gold/30 transition-all resize-none"
-              />
-              <button type="submit" className="w-full py-4 rounded-xl bg-gradient-to-r from-navy to-slate-800 text-white font-heading font-bold hover:shadow-lg transition-all active:scale-[0.98]">
-                Submit inquiry
+              <div className="space-y-2">
+                <label className="text-sm font-bold text-navy/80 ml-1">Your Message <span className="text-red-500">*</span></label>
+                <textarea
+                  placeholder="How can we help you?"
+                  rows={4}
+                  required
+                  value={form.message}
+                  onChange={(e) => setForm({ ...form, message: e.target.value })}
+                  className="w-full px-5 py-4 rounded-xl border border-slate-300 bg-white text-navy font-medium text-sm placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold hover:border-slate-400 transition-all resize-none shadow-sm"
+                />
+              </div>
+              <button type="submit" className="w-full py-4 mt-4 rounded-xl bg-gold hover:bg-gold-dark text-white font-heading font-bold shadow-[0_8px_30px_rgb(201,168,76,0.3)] hover:shadow-[0_8px_30px_rgb(201,168,76,0.5)] hover:-translate-y-1 transition-all active:scale-[0.98] uppercase tracking-wider text-sm flex justify-center items-center gap-2">
+                Send Message
               </button>
             </form>
           </div>
