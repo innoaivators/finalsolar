@@ -56,34 +56,34 @@ const Navbar = () => {
         <Link to="/" className={`flex items-center h-full transition-all duration-500 group`}>
           <div 
             className={`absolute top-0 left-1/2 -translate-x-1/2 md:translate-x-0 md:left-4 bg-white shadow-[0_20px_40px_rgba(0,0,0,0.25)] rounded-b-3xl transition-all duration-500 ease-in-out flex items-center justify-center z-50 overflow-hidden origin-top ${
-              (scrolled || mobileOpen) ? "w-0 px-0 pt-0 pb-0 opacity-0 scale-y-0 -translate-y-10" : "px-5 pt-6 pb-8 md:px-6 md:pt-8 md:pb-10 lg:px-8 lg:pt-10 lg:pb-12 opacity-100 scale-y-100 translate-y-0"
+              (scrolled || mobileOpen) ? "w-0 px-0 pt-0 pb-0 opacity-0 scale-y-0 -translate-y-10" : "px-5 pt-6 pb-8 md:px-6 md:pt-8 md:pb-10 lg:px-6 lg:pt-8 lg:pb-10 xl:px-8 xl:pt-10 xl:pb-12 opacity-100 scale-y-100 translate-y-0"
             }`}
           >
             <img
               src={logo}
               alt="Metallica"
-              className={`object-contain transition-all duration-500 ease-in-out mix-blend-multiply contrast-125 brightness-110 scale-[1.3] md:scale-[1.4] lg:scale-[1.65] group-hover:scale-[1.35] md:group-hover:scale-[1.45] lg:group-hover:scale-[1.7] ${
-                (scrolled || mobileOpen) ? "h-0 w-0 opacity-0" : "h-16 sm:h-20 md:h-24 lg:h-28 w-auto opacity-100"
+              className={`object-contain transition-all duration-500 ease-in-out mix-blend-multiply contrast-125 brightness-110 scale-[1.3] md:scale-[1.4] lg:scale-[1.45] xl:scale-[1.65] group-hover:scale-[1.35] md:group-hover:scale-[1.45] lg:group-hover:scale-[1.5] xl:group-hover:scale-[1.7] ${
+                (scrolled || mobileOpen) ? "h-0 w-0 opacity-0" : "h-16 sm:h-20 md:h-24 lg:h-24 xl:h-28 w-auto opacity-100"
               }`}
             />
           </div>
           <div className={`flex flex-col leading-tight pb-2 md:pb-0 transition-all duration-500 ease-in-out origin-left ${
-            (scrolled || mobileOpen) ? "pl-2 opacity-100 scale-x-100 w-auto" : "opacity-0 scale-x-0 w-0 md:opacity-100 md:scale-x-100 md:w-auto pl-0 md:pl-[160px] lg:pl-[280px]"
+            (scrolled || mobileOpen) ? "pl-2 opacity-100 scale-x-100 w-auto" : "opacity-0 scale-x-0 w-0 md:opacity-100 md:scale-x-100 md:w-auto pl-0 md:pl-[160px] lg:pl-[180px] xl:pl-[280px]"
           }`}>
-            <span className={`font-heading font-extrabold tracking-widest text-[#001f3f] uppercase transition-all duration-300 ${(scrolled || mobileOpen) ? "text-lg md:text-2xl" : "text-xl md:text-2xl lg:text-3xl"}`}>
+            <span className={`font-heading font-extrabold tracking-widest text-[#001f3f] uppercase transition-all duration-300 ${(scrolled || mobileOpen) ? "text-lg md:text-2xl" : "text-xl md:text-2xl lg:text-2xl xl:text-3xl"}`}>
               Metallica
             </span>
-            <span className={`font-body font-medium tracking-wide text-slate-500 uppercase transition-all duration-300 ${(scrolled || mobileOpen) ? "text-[8px] md:text-[10px]" : "text-[9px] md:text-[10px] lg:text-xs"}`}>
+            <span className={`font-body font-medium tracking-wide text-slate-500 uppercase transition-all duration-300 ${(scrolled || mobileOpen) ? "text-[8px] md:text-[10px]" : "text-[9px] md:text-[10px] lg:text-[10px] xl:text-xs"}`}>
               GENERAL TRADING &amp; CONTRACTING CO.W.L.L
             </span>
           </div>
         </Link>
 
         {/* Desktop */}
-        <div className="hidden lg:flex items-center gap-7">
-          <Link to="/" className="nav-link navy-text py-2">Home</Link>
-          <Link to="/about" className="nav-link navy-text py-2">About Us</Link>
-          <Link to="/management" className="nav-link navy-text py-2">Management</Link>
+        <div className="hidden lg:flex items-center gap-4 xl:gap-7">
+          <Link to="/" className="nav-link navy-text py-2 whitespace-nowrap text-sm xl:text-base">Home</Link>
+          <Link to="/about" className="nav-link navy-text py-2 whitespace-nowrap text-sm xl:text-base">About Us</Link>
+          <Link to="/management" className="nav-link navy-text py-2 whitespace-nowrap text-sm xl:text-base">Management</Link>
 
           {/* Services Dropdown */}
           <div className="relative desktop-dropdown">
@@ -92,7 +92,7 @@ const Navbar = () => {
                 setServicesOpen(!servicesOpen);
                 setProjectsOpen(false);
               }}
-              className="nav-link navy-text py-2 flex items-center gap-1"
+              className="nav-link navy-text py-2 flex items-center gap-1 whitespace-nowrap text-sm xl:text-base"
             >
               Services <ChevronDown size={14} className={`transition-transform duration-200 ${servicesOpen ? "rotate-180" : ""}`} />
             </button>
@@ -118,7 +118,7 @@ const Navbar = () => {
                 setProjectsOpen(!projectsOpen);
                 setServicesOpen(false);
               }}
-              className="nav-link navy-text py-2 flex items-center gap-1"
+              className="nav-link navy-text py-2 flex items-center gap-1 whitespace-nowrap text-sm xl:text-base"
             >
               Projects <ChevronDown size={14} className={`transition-transform duration-200 ${projectsOpen ? "rotate-180" : ""}`} />
             </button>
@@ -137,7 +137,7 @@ const Navbar = () => {
             )}
           </div>
 
-          <Link to="/contact" className="nav-link navy-text py-2">Contact Us</Link>
+          <Link to="/contact" className="nav-link navy-text py-2 whitespace-nowrap text-sm xl:text-base">Contact Us</Link>
         </div>
 
         {/* Mobile toggle */}
