@@ -55,7 +55,7 @@ const ServicesSection = () => {
   }, []);
 
   return (
-    <section className="py-20 overflow-hidden flex flex-col items-center" style={{ background: "hsl(var(--gray-light))" }}>
+    <section className="py-20 overflow-hidden flex flex-col items-center bg-white">
       <div className="container mx-auto px-4 md:px-8 lg:px-16 w-full">
 
         {/* Header */}

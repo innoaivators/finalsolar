@@ -1,8 +1,6 @@
 import PageBanner from "@/components/PageBanner";
 import projectMech from "@/assets/project-mechanical.jpg";
 import mechValve from "@/assets/mechanical_valve.png";
-import Lottie from "lottie-react";
-import animationData from "@/assets/animations/mine_worker.json";
 import { Settings, ShieldCheck, Zap, Layers } from "lucide-react";
 
 const MechanicalPage = () => {
@@ -78,19 +76,7 @@ const MechanicalPage = () => {
             </div>
           </div>
 
-          {/* Lottie Animation: Mine Worker - Moved to above bottom box as requested */}
-          <div className="flex justify-center mb-16 animate-fade-up">
-            <div className="w-full max-w-2xl bg-slate-50 rounded-[2.5rem] p-8 md:p-12 border border-slate-100 shadow-xl overflow-hidden relative group flex items-center justify-center min-h-[400px]">
-              <div className="absolute inset-0 bg-gradient-to-br from-white via-transparent to-gold/5 pointer-events-none"></div>
-              <Lottie
-                animationData={animationData}
-                loop={true}
-                className="w-full h-64 md:h-80 drop-shadow-2xl relative z-10"
-              />
-              <div className="absolute top-10 right-10 w-24 h-24 bg-gold/5 rounded-full blur-3xl animate-pulse"></div>
-              <div className="absolute bottom-10 left-10 w-32 h-32 bg-navy/5 rounded-full blur-[60px] animate-pulse delay-700"></div>
-            </div>
-          </div>
+
 
           <div className="rounded-3xl overflow-hidden shadow-2xl relative">
             <div className="absolute inset-0 bg-navy/60 z-10 flex items-center justify-center p-8">

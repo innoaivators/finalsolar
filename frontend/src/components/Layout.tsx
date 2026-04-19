@@ -12,7 +12,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
     <div className="min-h-screen flex flex-col w-full overflow-x-hidden">
       <TopBar />
       <Navbar />
-      <main className={`flex-1 w-full flex flex-col ${isHome ? "" : "pt-28 lg:pt-32 xl:pt-36"}`}>{children}</main>
+      <main className={`flex-1 w-full flex flex-col ${isHome ? "" : "pt-[116px]"}`}>{children}</main>
       <Footer />
     </div>
   );

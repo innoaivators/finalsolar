@@ -1,21 +1,17 @@
 import { useEffect, useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import projectMech from "@/assets/project-mechanical.jpg";
 import projectCivil from "@/assets/project-civil.jpg";
-import projectEng from "@/assets/project-engineering.jpg";
-import Carousel from "./PixelTransition9";
 import { FiArrowUpRight } from "react-icons/fi";
 
 const projects = [
   { image: projectMech, title: "Mechanical", category: "Mechanical", path: "/projects/mechanical" },
   { image: projectCivil, title: "Civil", category: "Civil", path: "/projects/civil" },
-  { image: projectEng, title: "Engineering", category: "Engineering", path: "/projects/mechanical" },
 ];
 
 const ProjectsSection = () => {
   const headerRef = useRef<HTMLDivElement>(null);
   const [headerVisible, setHeaderVisible] = useState(false);
-  const navigate = useNavigate();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -25,14 +21,6 @@ const ProjectsSection = () => {
     if (headerRef.current) observer.observe(headerRef.current);
     return () => observer.disconnect();
   }, []);
-
-  const carouselItems = projects.map((p, i) => ({
-    id: i,
-    title: p.title,
-    description: `${p.category} solutions delivering excellence in every detail.`,
-    image: p.image,
-    icon: <FiArrowUpRight className="h-4 w-4" />
-  }));
 
   return (
     <section className="section-padding overflow-hidden" style={{ background: "hsl(var(--gray-light))" }}>
@@ -45,16 +33,34 @@ const ProjectsSection = () => {
           <h2 className="section-heading">Our Latest Projects</h2>
         </div>
 
-        {/* Animation Container */}
-        <div className="flex items-center justify-center mt-12 md:mt-16">
-          <Carousel 
-            items={carouselItems} 
-            baseWidth={500} 
-            baseHeight={350}
-            autoplay={true} 
-            autoplayDelay={3500} 
-            loop={true} 
-          />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 mt-12 md:mt-16 max-w-5xl mx-auto">
+          {projects.map((p, i) => (
+            <Link 
+              key={i} 
+              to={p.path} 
+              className="group relative overflow-hidden rounded-2xl bg-white shadow-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 block h-[350px] w-full"
+            >
+              <img 
+                src={p.image} 
+                alt={p.title} 
+                className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-navy/95 via-navy/50 to-transparent transition-opacity duration-300 opacity-90 group-hover:opacity-100"></div>
+              
+              <div className="absolute top-5 left-5 w-12 h-12 rounded bg-[#f59e0b] text-navy flex items-center justify-center transform transition-all duration-300 shadow-md">
+                <FiArrowUpRight className="h-6 w-6 stroke-[3px]" />
+              </div>
+
+              <div className="absolute bottom-0 left-0 w-full p-6 xl:p-8 flex flex-col justify-end">
+                  <h3 className="text-xl sm:text-2xl lg:text-3xl font-heading font-[900] uppercase text-white tracking-wide mb-2">
+                    {p.title}
+                  </h3>
+                  <p className="text-slate-200 text-sm font-medium">
+                    {`${p.category} solutions delivering excellence in every detail.`}
+                  </p>
+              </div>
+            </Link>
+          ))}
         </div>
       </div>
     </section>
@@ -62,4 +68,3 @@ const ProjectsSection = () => {
 };
 
 export default ProjectsSection;
-
