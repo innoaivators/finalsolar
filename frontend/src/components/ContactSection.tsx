@@ -95,111 +95,115 @@ const ContactSection = () => {
           <div className="h-1 w-20 bg-gold mx-auto rounded-full"></div>
         </div>
 
-        <div className={`grid lg:grid-cols-2 gap-16 items-start ${visible ? "animate-fade-up" : "opacity-0"}`}>
+        <div className={`grid lg:grid-cols-2 gap-8 lg:gap-16 items-start ${visible ? "animate-fade-up" : "opacity-0"}`}>
           {/* Individual Contact Info Cards */}
-          <div className="space-y-6">
-            <div className="p-8 bg-slate-950/40 backdrop-blur-xl rounded-3xl border border-gold/20 shadow-xl flex gap-6 hover:bg-slate-900/50 transition-all group">
-              <div className="w-14 h-14 rounded-2xl flex items-center justify-center bg-gold/20 flex-shrink-0 border border-gold/30 group-hover:scale-110 transition-transform">
-                <MapPin className="text-gold" size={26} />
+          <div className="space-y-4 sm:space-y-6">
+            {/* Location */}
+            <div className="p-5 sm:p-8 bg-slate-950/40 backdrop-blur-xl rounded-2xl sm:rounded-3xl border border-gold/20 shadow-xl flex gap-4 sm:gap-6 hover:bg-slate-900/50 transition-all group items-center lg:items-start">
+              <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl flex items-center justify-center bg-gold/20 flex-shrink-0 border border-gold/30 group-hover:scale-110 transition-transform">
+                <MapPin className="text-gold w-6 h-6 sm:w-auto" />
               </div>
-              <div>
-                <h4 className="font-heading font-bold text-white text-lg mb-2">Office Address</h4>
-                <p className="text-slate-300 font-body text-sm leading-relaxed">
+              <div className="flex-1 min-w-0">
+                <h4 className="font-heading font-bold text-white text-base sm:text-lg mb-1 sm:mb-2">Office Address</h4>
+                <p className="text-slate-300 font-body text-xs sm:text-sm leading-relaxed">
                   Office No: 10, Floor: 3, Building No: 1,<br />Block No: 7, Fahaheel, Kuwait
                 </p>
               </div>
             </div>
 
-            <div className="p-8 bg-slate-950/40 backdrop-blur-xl rounded-3xl border border-gold/20 shadow-xl flex gap-6 hover:bg-slate-900/50 transition-all group">
-              <div className="w-14 h-14 rounded-2xl flex items-center justify-center bg-gold/20 flex-shrink-0 border border-gold/30 group-hover:scale-110 transition-transform">
-                <Phone className="text-gold" size={26} />
+            {/* Phones */}
+            <div className="p-5 sm:p-8 bg-slate-950/40 backdrop-blur-xl rounded-2xl sm:rounded-3xl border border-gold/20 shadow-xl flex gap-4 sm:gap-6 hover:bg-slate-900/50 transition-all group items-center lg:items-start">
+              <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl flex items-center justify-center bg-gold/20 flex-shrink-0 border border-gold/30 group-hover:scale-110 transition-transform">
+                <Phone className="text-gold w-6 h-6 sm:w-auto" />
               </div>
-              <div>
-                <h4 className="font-heading font-bold text-white text-lg mb-2">Phone Numbers</h4>
-                <div className="text-slate-300 font-body text-sm space-y-1">
+              <div className="flex-1 min-w-0">
+                <h4 className="font-heading font-bold text-white text-base sm:text-lg mb-1 sm:mb-2">Phone Numbers</h4>
+                <div className="text-slate-300 font-body text-xs sm:text-sm space-y-1">
                   <span className="block">+965 9898 8281</span>
                   <span className="block">+965 6002 6630</span>
                 </div>
               </div>
             </div>
 
-            <div className="p-8 bg-slate-950/40 backdrop-blur-xl rounded-3xl border border-gold/20 shadow-xl flex gap-6 hover:bg-slate-900/50 transition-all group">
-              <div className="w-14 h-14 rounded-2xl flex items-center justify-center bg-gold/20 flex-shrink-0 border border-gold/30 group-hover:scale-110 transition-transform">
-                <Mail className="text-gold" size={26} />
+            {/* Emails */}
+            <div className="p-5 sm:p-8 bg-slate-950/40 backdrop-blur-xl rounded-2xl sm:rounded-3xl border border-gold/20 shadow-xl flex gap-4 sm:gap-6 hover:bg-slate-900/50 transition-all group items-center lg:items-start">
+              <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl flex items-center justify-center bg-gold/20 flex-shrink-0 border border-gold/30 group-hover:scale-110 transition-transform">
+                <Mail className="text-gold w-6 h-6 sm:w-auto" />
               </div>
-              <div>
-                <h4 className="font-heading font-bold text-white text-lg mb-2">Email Addresses</h4>
-                <div className="flex flex-col gap-2">
-                  <a href="mailto:info@metallicakw.com" className="text-slate-300 font-body text-sm hover:text-gold transition-colors">info@metallicakw.com</a>
-                  <a href="mailto:Info@metallicagcc.com" className="text-slate-300 font-body text-sm hover:text-gold transition-colors">Info@metallicagcc.com</a>
+              <div className="flex-1 min-w-0">
+                <h4 className="font-heading font-bold text-white text-base sm:text-lg mb-1 sm:mb-2">Email Addresses</h4>
+                <div className="flex flex-col gap-1 sm:gap-2">
+                  <a href="mailto:info@metallicakw.com" className="text-slate-300 font-body text-xs sm:text-sm hover:text-gold transition-colors break-words">info@metallicakw.com</a>
+                  <a href="mailto:Info@metallicagcc.com" className="text-slate-300 font-body text-xs sm:text-sm hover:text-gold transition-colors break-words">Info@metallicagcc.com</a>
                 </div>
               </div>
             </div>
 
-            <div className="p-8 bg-slate-950/40 backdrop-blur-xl rounded-3xl border border-gold/20 shadow-xl flex gap-6 hover:bg-slate-900/50 transition-all group">
-              <div className="w-14 h-14 rounded-2xl flex items-center justify-center bg-gold/20 flex-shrink-0 border border-gold/30 group-hover:scale-110 transition-transform">
-                <Globe className="text-gold" size={26} />
+            {/* Websites */}
+            <div className="p-5 sm:p-8 bg-slate-950/40 backdrop-blur-xl rounded-2xl sm:rounded-3xl border border-gold/20 shadow-xl flex gap-4 sm:gap-6 hover:bg-slate-900/50 transition-all group items-center lg:items-start">
+              <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl flex items-center justify-center bg-gold/20 flex-shrink-0 border border-gold/30 group-hover:scale-110 transition-transform">
+                <Globe className="text-gold w-6 h-6 sm:w-auto" />
               </div>
-              <div>
-                <h4 className="font-heading font-bold text-white text-lg mb-2">Websites</h4>
-                <div className="flex flex-col gap-2">
-                  <a href="https://www.metallicakw.com" target="_blank" rel="noopener noreferrer" className="text-slate-300 font-body text-sm hover:text-gold transition-colors">www.metallicakw.com</a>
-                  <a href="https://www.metallicagcc.com" target="_blank" rel="noopener noreferrer" className="text-slate-300 font-body text-sm hover:text-gold transition-colors">www.metallicagcc.com</a>
+              <div className="flex-1 min-w-0">
+                <h4 className="font-heading font-bold text-white text-base sm:text-lg mb-1 sm:mb-2">Websites</h4>
+                <div className="flex flex-col gap-1 sm:gap-2">
+                  <a href="https://www.metallicakw.com" target="_blank" rel="noopener noreferrer" className="text-slate-300 font-body text-xs sm:text-sm hover:text-gold transition-colors break-words">www.metallicakw.com</a>
+                  <a href="https://www.metallicagcc.com" target="_blank" rel="noopener noreferrer" className="text-slate-300 font-body text-xs sm:text-sm hover:text-gold transition-colors break-words">www.metallicagcc.com</a>
                 </div>
               </div>
             </div>
           </div>
 
           {/* Form */}
-          <div className="bg-white p-8 md:p-10 rounded-3xl shadow-2xl border border-slate-100 h-fit">
-            <h3 className="text-2xl font-heading font-bold navy-text mb-8">Send us a Message</h3>
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="space-y-2">
-                  <label className="text-sm font-bold text-navy/80 ml-1">Full Name <span className="text-red-500">*</span></label>
+          <div className="bg-white p-6 sm:p-8 md:p-10 rounded-2xl sm:rounded-3xl shadow-2xl border border-slate-100 h-fit w-full">
+            <h3 className="text-xl sm:text-2xl font-heading font-bold navy-text mb-6 sm:mb-8">Send us a Message</h3>
+            <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+              <div className="grid sm:grid-cols-2 gap-4 sm:gap-6">
+                <div className="space-y-1 sm:space-y-2">
+                  <label className="text-xs sm:text-sm font-bold text-navy/80 ml-1">Full Name <span className="text-red-500">*</span></label>
                   <input
                     type="text"
-                    placeholder="John Doe"
+                    placeholder="Enter your name"
                     required
                     value={form.name}
                     onChange={(e) => setForm({ ...form, name: e.target.value })}
-                    className="w-full px-5 py-4 rounded-xl border border-slate-300 bg-white text-navy font-medium text-sm placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold hover:border-slate-400 transition-all shadow-sm"
+                    className="w-full px-4 py-3 sm:px-5 sm:py-4 rounded-xl border border-slate-300 bg-white text-navy font-medium text-xs sm:text-sm placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold hover:border-slate-400 transition-all shadow-sm"
                   />
                 </div>
-                <div className="space-y-2">
-                  <label className="text-sm font-bold text-navy/80 ml-1">Email Address <span className="text-red-500">*</span></label>
+                <div className="space-y-1 sm:space-y-2">
+                  <label className="text-xs sm:text-sm font-bold text-navy/80 ml-1">Email Address <span className="text-red-500">*</span></label>
                   <input
                     type="email"
-                    placeholder="john@example.com"
+                    placeholder="Enter your email"
                     required
                     value={form.email}
                     onChange={(e) => setForm({ ...form, email: e.target.value })}
-                    className="w-full px-5 py-4 rounded-xl border border-slate-300 bg-white text-navy font-medium text-sm placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold hover:border-slate-400 transition-all shadow-sm"
+                    className="w-full px-4 py-3 sm:px-5 sm:py-4 rounded-xl border border-slate-300 bg-white text-navy font-medium text-xs sm:text-sm placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold hover:border-slate-400 transition-all shadow-sm"
                   />
                 </div>
               </div>
-              <div className="space-y-2">
-                <label className="text-sm font-bold text-navy/80 ml-1">Phone Number</label>
+              <div className="space-y-1 sm:space-y-2">
+                <label className="text-xs sm:text-sm font-bold text-navy/80 ml-1">Phone Number</label>
                 <input
                   type="tel"
                   placeholder="+965 XXXX XXXX"
                   value={form.phone}
                   onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                  className="w-full px-5 py-4 rounded-xl border border-slate-300 bg-white text-navy font-medium text-sm placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold hover:border-slate-400 transition-all shadow-sm"
+                  className="w-full px-4 py-3 sm:px-5 sm:py-4 rounded-xl border border-slate-300 bg-white text-navy font-medium text-xs sm:text-sm placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold hover:border-slate-400 transition-all shadow-sm"
                 />
               </div>
-              <div className="space-y-2">
-                <label className="text-sm font-bold text-navy/80 ml-1">Your Message <span className="text-red-500">*</span></label>
+              <div className="space-y-1 sm:space-y-2">
+                <label className="text-xs sm:text-sm font-bold text-navy/80 ml-1">Your Message <span className="text-red-500">*</span></label>
                 <textarea
                   placeholder="How can we help you?"
                   rows={4}
                   required
                   value={form.message}
                   onChange={(e) => setForm({ ...form, message: e.target.value })}
-                  className="w-full px-5 py-4 rounded-xl border border-slate-300 bg-white text-navy font-medium text-sm placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold hover:border-slate-400 transition-all resize-none shadow-sm"
+                  className="w-full px-4 py-3 sm:px-5 sm:py-4 rounded-xl border border-slate-300 bg-white text-navy font-medium text-xs sm:text-sm placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold hover:border-slate-400 transition-all resize-none shadow-sm"
                 />
               </div>
-              <button type="submit" className="w-full py-4 mt-4 rounded-xl bg-gold hover:bg-gold-dark text-white font-heading font-bold shadow-[0_8px_30px_rgb(201,168,76,0.3)] hover:shadow-[0_8px_30px_rgb(201,168,76,0.5)] hover:-translate-y-1 transition-all active:scale-[0.98] uppercase tracking-wider text-sm flex justify-center items-center gap-2">
+              <button type="submit" className="w-full py-3 sm:py-4 mt-2 sm:mt-4 rounded-xl bg-gold hover:bg-gold-dark text-white font-heading font-bold shadow-[0_8px_30px_rgb(201,168,76,0.3)] hover:shadow-[0_8px_30px_rgb(201,168,76,0.5)] hover:-translate-y-1 transition-all active:scale-[0.98] uppercase tracking-wider text-xs sm:text-sm flex justify-center items-center gap-2">
                 Send Message
               </button>
             </form>

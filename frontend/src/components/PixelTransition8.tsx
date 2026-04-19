@@ -116,7 +116,28 @@ const MasonryGallery: FC<MasonryGalleryProps> = ({ items, columns = 4 }) => {
 
   // Distribute into columns
   const columnArrays: MasonryItem[][] = Array.from({ length: columns }, () => []);
-  items.forEach((item, i) => columnArrays[i % columns].push(item));
+
+  if (columns === 3) {
+    // In tablet view, column 1 items are always tall (3/4 aspect ratio) while column 0 
+    // are short (4/3) and column 2 are square (1/1). To prevent the center column 
+    // from growing much longer than others, we dynamically place items into the shortest column.
+    const colWeights = [0, 0, 0];
+    items.forEach((item) => {
+      let minCol = 0;
+      if (colWeights[1] < colWeights[minCol]) minCol = 1;
+      if (colWeights[2] < colWeights[minCol]) minCol = 2;
+      
+      const rowIdx = columnArrays[minCol].length;
+      const globalIdx = minCol + rowIdx * 3;
+      const aspectMod = globalIdx % 3;
+      const heightVal = aspectMod === 0 ? 0.75 : aspectMod === 1 ? 1.333 : 1;
+
+      columnArrays[minCol].push(item);
+      colWeights[minCol] += heightVal;
+    });
+  } else {
+    items.forEach((item, i) => columnArrays[i % columns].push(item));
+  }
 
   return (
     <>

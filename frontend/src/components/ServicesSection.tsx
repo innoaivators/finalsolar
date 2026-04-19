@@ -46,6 +46,14 @@ const ServicesSection = () => {
     }
   };
 
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <section className="py-20 overflow-hidden flex flex-col items-center" style={{ background: "hsl(var(--gray-light))" }}>
       <div className="container mx-auto px-4 md:px-8 lg:px-16 w-full">
@@ -66,13 +74,13 @@ const ServicesSection = () => {
       </div>
 
       {/* Interactive Gallery */}
-      <div className="h-[600px] w-full mt-[-50px] relative">
+      <div className={`${isMobile ? "h-[450px]" : "h-[600px] mt-[-50px]"} w-full relative`}>
         <CircularGallery
           items={galleryItems}
-          bend={3}
+          bend={isMobile ? 1.5 : 3}
           textColor="#d4af37"
           borderRadius={0.05}
-          font="bold 18px Montserrat"
+          font={isMobile ? "bold 14px Montserrat" : "bold 18px Montserrat"}
           onItemClick={handleItemClick}
         />
       </div>

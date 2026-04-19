@@ -82,7 +82,7 @@ const HeroSection = () => {
   const panelBg = "rgba(40, 44, 52, 0.95)";
 
   return (
-    <section className="relative h-screen min-h-[600px] overflow-hidden bg-black">
+    <section className="relative h-screen min-h-[700px] lg:min-h-[800px] overflow-hidden bg-black">
       {/* Full Background Image */}
       <div
         key={`bg-${current}`}
@@ -103,7 +103,7 @@ const HeroSection = () => {
       />
 
       {/* Content */}
-      <div key={`content-${current}`} className={`relative z-10 mx-auto h-full px-4 sm:px-8 md:px-12 lg:px-24 flex items-center ${isLeft ? "justify-start" : "justify-end"}`}>
+      <div key={`content-${current}`} className={`relative z-10 mx-auto h-full px-4 sm:px-8 md:px-12 lg:px-24 flex flex-col justify-center pt-[120px] sm:pt-[160px] md:pt-[220px] pb-10 sm:pb-16 ${isLeft ? "items-start" : "items-end"}`}>
         <div className={`w-full md:w-[60%] lg:w-[45%] flex flex-col justify-center ${isLeft ? "items-start text-left" : "items-end text-right"} transition-all duration-700 ease-out delay-100 ${isInitialLoad || !fade
           ? (isLeft ? "opacity-0 -translate-x-12" : "opacity-0 translate-x-12")
           : "opacity-100 translate-x-0"

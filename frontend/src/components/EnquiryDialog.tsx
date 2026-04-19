@@ -83,7 +83,7 @@ const EnquiryDialog: React.FC<EnquiryDialogProps> = ({ productName, trigger, cla
         )}
       </DialogTrigger>
       
-      <DialogContent className="sm:max-w-[425px] bg-white rounded-3xl border-gold/20 max-h-[90vh] overflow-y-auto">
+      <DialogContent className="w-[92vw] sm:w-full sm:max-w-[425px] bg-white rounded-3xl border-gold/20 max-h-[90vh] overflow-y-auto p-4 sm:p-6">
         
         {view === 'methods' && (
           <>
@@ -101,33 +101,33 @@ const EnquiryDialog: React.FC<EnquiryDialogProps> = ({ productName, trigger, cla
                 href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="relative overflow-hidden flex items-center gap-5 p-5 rounded-2xl border border-green-200/50 bg-gradient-to-br from-green-50/50 to-emerald-50/50 hover:from-green-100 hover:to-emerald-100 transition-all duration-500 group shadow-[0_8px_30px_rgb(34,197,94,0.12)] hover:shadow-[0_8px_30px_rgb(34,197,94,0.25)]"
+                className="relative overflow-hidden flex items-center gap-4 sm:gap-5 p-4 sm:p-5 rounded-2xl border border-green-200/50 bg-gradient-to-br from-green-50/50 to-emerald-50/50 hover:from-green-100 hover:to-emerald-100 transition-all duration-500 group shadow-[0_8px_30px_rgb(34,197,94,0.12)] hover:shadow-[0_8px_30px_rgb(34,197,94,0.25)]"
               >
                 <div className="absolute -right-4 -top-4 opacity-[0.03] group-hover:opacity-[0.08] transition-opacity duration-500 pointer-events-none transform group-hover:scale-110 group-hover:-rotate-6">
                   <FaWhatsapp size={120} />
                 </div>
-                <div className="w-14 h-14 bg-gradient-to-br from-[#25D366] to-[#128C7E] rounded-2xl flex items-center justify-center text-white shadow-xl shadow-green-500/30 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-500 z-10 shrink-0 border border-white/20">
-                  <FaWhatsapp size={32} />
+                <div className="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-[#25D366] to-[#128C7E] rounded-2xl flex items-center justify-center text-white shadow-xl shadow-green-500/30 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-500 z-10 shrink-0 border border-white/20">
+                  <FaWhatsapp size={28} className="sm:w-8 sm:h-8" />
                 </div>
                 <div className="flex-1 z-10">
-                  <h4 className="font-heading font-bold text-navy text-xl mb-1 group-hover:text-[#128C7E] transition-colors">WhatsApp</h4>
-                  <p className="text-sm text-navy/60 font-body">Instant message & quick response</p>
+                  <h4 className="font-heading font-bold text-navy text-lg sm:text-xl mb-0.5 sm:mb-1 group-hover:text-[#128C7E] transition-colors">WhatsApp</h4>
+                  <p className="text-xs sm:text-sm text-navy/60 font-body leading-tight">Instant message & quick response</p>
                 </div>
               </a>
 
               <button
                 onClick={() => setView('email_form')}
-                className="relative overflow-hidden flex items-center gap-5 p-5 rounded-2xl border border-blue-200/50 bg-gradient-to-br from-blue-50/50 to-indigo-50/50 hover:from-blue-100/80 hover:to-indigo-100/80 transition-all duration-500 group text-left shadow-[0_8px_30px_rgb(59,130,246,0.12)] hover:shadow-[0_8px_30px_rgb(59,130,246,0.25)] w-full"
+                className="relative overflow-hidden flex items-center gap-4 sm:gap-5 p-4 sm:p-5 rounded-2xl border border-blue-200/50 bg-gradient-to-br from-blue-50/50 to-indigo-50/50 hover:from-blue-100/80 hover:to-indigo-100/80 transition-all duration-500 group text-left shadow-[0_8px_30px_rgb(59,130,246,0.12)] hover:shadow-[0_8px_30px_rgb(59,130,246,0.25)] w-full"
               >
                 <div className="absolute -right-4 -top-4 opacity-[0.03] group-hover:opacity-[0.08] transition-opacity duration-500 pointer-events-none transform group-hover:scale-110 group-hover:rotate-6">
                   <SiGmail size={120} />
                 </div>
-                <div className="w-14 h-14 bg-gradient-to-br from-[#EA4335] to-[#C5221F] rounded-2xl flex items-center justify-center text-white shadow-xl shadow-red-500/30 group-hover:scale-110 group-hover:-rotate-6 transition-transform duration-500 z-10 shrink-0 border border-white/20">
-                  <SiGmail size={28} />
+                <div className="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-[#EA4335] to-[#C5221F] rounded-2xl flex items-center justify-center text-white shadow-xl shadow-red-500/30 group-hover:scale-110 group-hover:-rotate-6 transition-transform duration-500 z-10 shrink-0 border border-white/20">
+                  <SiGmail size={24} className="sm:w-[28px] sm:h-[28px]" />
                 </div>
                 <div className="flex-1 z-10">
-                  <h4 className="font-heading font-bold text-navy text-xl mb-1 group-hover:text-[#C5221F] transition-colors">Email Enquiry</h4>
-                  <p className="text-sm text-navy/60 font-body">Send a detailed message directly</p>
+                  <h4 className="font-heading font-bold text-navy text-lg sm:text-xl mb-0.5 sm:mb-1 group-hover:text-[#C5221F] transition-colors">Email Enquiry</h4>
+                  <p className="text-xs sm:text-sm text-navy/60 font-body leading-tight">Send a detailed message directly</p>
                 </div>
               </button>
             </div>

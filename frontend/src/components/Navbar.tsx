@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import logo from "@/assets/nav_logo.jpeg";
+import footerLogo from "@/assets/footer_logo.png";
 
 const serviceItems = [
   { label: "Renewable solar Energy", path: "/services/renewable-solar-panel" },
@@ -51,31 +52,40 @@ const Navbar = () => {
   }, [location.pathname]);
 
   return (
-    <nav className={`fixed w-full z-[100] transition-all duration-500 ease-in-out ${scrolled ? "top-0 bg-white/75 backdrop-blur-xl shadow-[0_15px_40px_-15px_rgba(0,0,0,0.2)] border-b border-white/60" : "top-0 xl:top-9 bg-gradient-to-r from-slate-50 via-white to-slate-50 shadow-sm border-b border-slate-100"}`}>
-      <div className={`container mx-auto relative flex items-center justify-between transition-all duration-300 ${scrolled ? "h-16" : "h-20"} px-4`}>
-        <Link to="/" className={`flex items-center h-full transition-all duration-500 group`}>
+    <nav className={`fixed w-full z-[100] transition-all duration-200 ease-in-out top-9 ${scrolled ? "bg-white/75 backdrop-blur-xl shadow-[0_15px_40px_-15px_rgba(0,0,0,0.2)] border-b border-white/60" : "bg-gradient-to-r from-slate-50 via-white to-slate-50 shadow-sm border-b border-slate-100"}`}>
+      <div className={`container mx-auto relative flex items-center justify-between transition-all duration-200 ${scrolled ? "h-16" : "h-20"} px-4`}>
+        <Link to="/" className={`flex items-center h-full transition-all duration-200 group`}>
           <div 
-            className={`absolute top-0 left-1/2 -translate-x-1/2 md:translate-x-0 md:left-4 bg-white shadow-[0_20px_40px_rgba(0,0,0,0.25)] rounded-b-3xl transition-all duration-500 ease-in-out flex items-center justify-center z-50 overflow-hidden origin-top ${
-              (scrolled || mobileOpen) ? "w-0 px-0 pt-0 pb-0 opacity-0 scale-y-0 -translate-y-10" : "px-5 pt-6 pb-8 md:px-6 md:pt-8 md:pb-10 lg:px-6 lg:pt-8 lg:pb-10 xl:px-8 xl:pt-10 xl:pb-12 opacity-100 scale-y-100 translate-y-0"
+            className={`absolute top-0 left-4 bg-white shadow-[0_20px_40px_rgba(0,0,0,0.25)] rounded-b-3xl transition-all duration-200 ease-in-out flex items-center justify-center z-50 overflow-hidden origin-top ${
+              (scrolled || mobileOpen) ? "w-0 px-0 pt-0 pb-0 opacity-0 scale-y-0 -translate-y-10" : "px-3 pt-4 pb-6 sm:px-5 sm:pt-6 sm:pb-8 md:px-6 md:pt-8 md:pb-10 lg:px-6 lg:pt-8 lg:pb-10 xl:px-8 xl:pt-10 xl:pb-12 opacity-100 scale-y-100 translate-y-0"
             }`}
           >
             <img
               src={logo}
               alt="Metallica"
-              className={`object-contain transition-all duration-500 ease-in-out mix-blend-multiply contrast-125 brightness-110 scale-[1.3] md:scale-[1.4] lg:scale-[1.45] xl:scale-[1.65] group-hover:scale-[1.35] md:group-hover:scale-[1.45] lg:group-hover:scale-[1.5] xl:group-hover:scale-[1.7] ${
+              className={`object-contain transition-all duration-200 ease-in-out mix-blend-multiply contrast-125 brightness-110 scale-[1.3] md:scale-[1.4] lg:scale-[1.45] xl:scale-[1.65] group-hover:scale-[1.35] md:group-hover:scale-[1.45] lg:group-hover:scale-[1.5] xl:group-hover:scale-[1.7] ${
                 (scrolled || mobileOpen) ? "h-0 w-0 opacity-0" : "h-16 sm:h-20 md:h-24 lg:h-24 xl:h-28 w-auto opacity-100"
               }`}
             />
           </div>
-          <div className={`flex flex-col leading-tight pb-2 md:pb-0 transition-all duration-500 ease-in-out origin-left ${
-            (scrolled || mobileOpen) ? "pl-2 opacity-100 scale-x-100 w-auto" : "opacity-0 scale-x-0 w-0 md:opacity-100 md:scale-x-100 md:w-auto pl-0 md:pl-[160px] lg:pl-[180px] xl:pl-[280px]"
+          <div className={`flex items-center transition-all duration-200 ease-in-out origin-left ${
+            (scrolled || mobileOpen) ? "opacity-100 scale-x-100 w-auto pl-1 gap-2 md:gap-3" : "opacity-100 scale-x-100 w-auto gap-2 md:gap-3 pl-[110px] sm:pl-[120px] md:pl-[160px] lg:pl-[180px] xl:pl-[280px]"
           }`}>
-            <span className={`font-heading font-extrabold tracking-widest text-[#001f3f] uppercase transition-all duration-300 ${(scrolled || mobileOpen) ? "text-lg md:text-2xl" : "text-xl md:text-2xl lg:text-2xl xl:text-3xl"}`}>
-              Metallica
-            </span>
-            <span className={`font-body font-medium tracking-wide text-slate-500 uppercase transition-all duration-300 ${(scrolled || mobileOpen) ? "text-[8px] md:text-[10px]" : "text-[9px] md:text-[10px] lg:text-[10px] xl:text-xs"}`}>
-              GENERAL TRADING &amp; CONTRACTING CO.W.L.L
-            </span>
+            <img
+              src={footerLogo}
+              alt="Metallica Icon"
+              className={`object-contain transition-all duration-200 ease-in-out ${
+                (scrolled || mobileOpen) ? "h-8 sm:h-10 md:h-12 w-auto opacity-100 scale-100 mix-blend-multiply contrast-125 brightness-110" : "h-0 w-0 opacity-0 scale-0"
+              }`}
+            />
+            <div className={`flex flex-col leading-tight pb-2 md:pb-0`}>
+              <span className={`font-serif font-bold tracking-tight text-[#ed1c24] transition-all duration-300 ${(scrolled || mobileOpen) ? "text-xl sm:text-2xl md:text-3xl" : "text-2xl md:text-3xl lg:text-3xl xl:text-4xl"}`}>
+                Metallica
+              </span>
+              <span className={`font-sans font-bold tracking-tight text-black uppercase transition-all duration-300 ${(scrolled || mobileOpen) ? "text-[6px] sm:text-[7px] md:text-[9px]" : "text-[8px] md:text-[9px] lg:text-[10px] xl:text-[11px]"}`}>
+                GENERAL TRADING &amp; CONTRACTING CO.W.L.L
+              </span>
+            </div>
           </div>
         </Link>
 
