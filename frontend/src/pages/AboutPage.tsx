@@ -115,7 +115,7 @@ const AboutPage = () => {
             <p className="section-title text-center">ABOUT METALLICA</p>
             <h2 className="section-heading text-center mb-10 text-2xl md:text-4xl">Mission & Vision</h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
               <div className="bg-gradient-to-br from-white to-slate-50/80 p-6 md:p-9 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:shadow-[0_15px_40px_rgba(212,175,55,0.15)] border border-slate-100 hover:border-gold/30 border-t-4 border-t-gold transition-all duration-500 h-full relative overflow-hidden group text-center md:text-left">
                 <div className="w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center mb-4 mx-auto md:mx-0">
                   <span className="font-heading font-bold gold-text">1</span>
@@ -150,27 +150,16 @@ const AboutPage = () => {
                   <li>• Our Partners, Suppliers and Business Functions</li>
                 </ul>
               </div>
-            </div>
-          </div>
 
-          {/* QHSE Section */}
-          <div className="mb-8 max-w-4xl mx-auto">
-            <div className="bg-gradient-to-br from-white to-slate-50/80 p-8 md:p-12 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-slate-100 relative overflow-hidden">
-               <div className="w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center mb-6">
-                 <span className="font-heading font-bold gold-text">4</span>
-               </div>
-               <h3 className="font-heading font-bold text-2xl navy-text mb-6">Quality, Health, Safety And Environment</h3>
-               <div className="navy-text text-sm sm:text-base font-body leading-relaxed text-justify">
-                 <p>
-                   <strong className="navy-text">METALLICA</strong> Co. understands the current and future needs of the oil and gas companies and meets their requirements with innovative solutions.
-                   {" "}
-                   <strong className="navy-text">METALLICA</strong> is committed to achieving a culture of health and safety, systems and processes to identify, address and alleviate all risks in the areas of quality, safety, wellbeing and environmental management by delivering best in class products and services to our customers.
-                   {" "}
-                   <strong className="navy-text">METALLICA</strong> Co. is committed to furnishing and equipping a safe workplace on the construction site.
-                   {" "}
-                   We are aware that our QHSE performance is integral to the successful growth of Metallica in an evolving landscape of the world.
-                 </p>
-               </div>
+              <div className="bg-gradient-to-br from-white to-slate-50/80 p-6 md:p-9 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:shadow-[0_15px_40px_rgba(212,175,55,0.15)] border border-slate-100 hover:border-gold/30 border-t-4 border-t-gold transition-all duration-500 h-full relative overflow-hidden group text-center md:text-left">
+                <div className="w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center mb-4 mx-auto md:mx-0">
+                  <span className="font-heading font-bold gold-text">4</span>
+                </div>
+                <h3 className="font-heading font-bold text-lg navy-text mb-3">QHSE Policy</h3>
+                <p className="navy-text text-sm font-body leading-relaxed">
+                  METALLICA is committed to achieving a culture of health and safety, systems and processes to identify, address and alleviate all risks in the areas of quality, safety, wellbeing and environmental management by delivering best in class products and services to our customers.
+                </p>
+              </div>
             </div>
           </div>
         </div>
