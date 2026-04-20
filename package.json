@@ -8,5 +8,8 @@
   "scripts": {
     "build:frontend": "cd frontend && npm install && npm run build",
     "build:backend": "cd backend && npm install"
+  },
+  "optionalDependencies": {
+    "@rollup/rollup-linux-x64-gnu": "^4.60.2"
   }
 }
