@@ -204,10 +204,10 @@ const Navbar = () => {
             <a href="https://www.instagram.com/metallicakuwait" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full flex items-center justify-center bg-gold/10 text-gold hover:bg-gold hover:text-white transition-all">
               <Instagram size={20} />
             </a>
-            <a href="#" className="w-10 h-10 rounded-full flex items-center justify-center bg-gold/10 text-gold hover:bg-gold hover:text-white transition-all">
+            <a href="https://www.instagram.com/metallicakuwait" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full flex items-center justify-center bg-gold/10 text-gold hover:bg-gold hover:text-white transition-all">
               <Facebook size={20} />
             </a>
-            <a href="#" className="w-10 h-10 rounded-full flex items-center justify-center bg-gold/10 text-gold hover:bg-gold hover:text-white transition-all">
+            <a href="https://www.instagram.com/metallicakuwait" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full flex items-center justify-center bg-gold/10 text-gold hover:bg-gold hover:text-white transition-all">
               <Linkedin size={20} />
             </a>
           </div>

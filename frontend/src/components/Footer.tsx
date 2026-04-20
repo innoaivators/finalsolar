@@ -26,14 +26,14 @@ const Footer = () => {
               Metallica Co. understands the current and future needs of the oil and gas companies and meets their requirements with excellence and professionalism.
             </p>
             <div className="flex gap-3 mt-4">
-              <a href="#" className="w-8 h-8 rounded-full flex items-center justify-center bg-gold/20 hover:bg-gold/40 transition-colors">
+              <a href="https://www.instagram.com/metallicakuwait" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full flex items-center justify-center bg-gold/20 hover:bg-gold/40 transition-colors">
                 <Facebook size={14} />
               </a>
-              {/* Social Links v1.1 */}
+              {/* Social Links Updated */}
               <a href="https://www.instagram.com/metallicakuwait" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full flex items-center justify-center bg-gold/20 hover:bg-gold/40 transition-colors">
                 <Instagram size={14} />
               </a>
-              <a href="#" className="w-8 h-8 rounded-full flex items-center justify-center bg-gold/20 hover:bg-gold/40 transition-colors">
+              <a href="https://www.instagram.com/metallicakuwait" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full flex items-center justify-center bg-gold/20 hover:bg-gold/40 transition-colors">
                 <Linkedin size={14} />
               </a>
             </div>
