@@ -50,6 +50,12 @@ const HeroSection = () => {
   const [isInitialLoad, setIsInitialLoad] = useState(true);
 
   useEffect(() => {
+    // Preload all hero images for smoother transitions
+    slides.forEach((slide) => {
+      const img = new Image();
+      img.src = slide.image;
+    });
+
     // Trigger initial slide-in animation
     const timer = setTimeout(() => {
       setIsInitialLoad(false);
