@@ -26,7 +26,7 @@ app.post('/api/enquiry', async (req, res) => {
 
   try {
     const data = await resend.emails.send({
-      from: 'Metallica Enquiry <onboarding@resend.dev>',
+      from: `Metallica Enquiry <${process.env.EMAIL_FROM || 'onboarding@resend.dev'}>`,
       to: ['info@metallicakw.com'], // Using your verified Resend testing email (must match exactly)
       reply_to: email,
       subject: `New Enquiry: ${productName}`,
@@ -60,7 +60,7 @@ app.post('/api/contact', async (req, res) => {
 
   try {
     const data = await resend.emails.send({
-      from: 'Metallica Contact <onboarding@resend.dev>',
+      from: `Metallica Contact <${process.env.EMAIL_FROM || 'onboarding@resend.dev'}>`,
       to: ['info@metallicakw.com'], // testing email (must match exactly)
       reply_to: email,
       subject: `New Contact Request from ${name}`,
