@@ -25,7 +25,7 @@ app.post('/api/enquiry', async (req, res) => {
   try {
     const data = await resend.emails.send({
       from: 'Metallica Enquiry <onboarding@resend.dev>',
-      to: ['pr.jayabalaji@gmail.com'], // Using your verified Resend testing email
+      to: ['info@Metallicakw.com'], // Using your verified Resend testing email
       subject: `New Enquiry: ${productName}`,
       html: `
         <div style="font-family: sans-serif; padding: 20px; border: 1px solid #eee; border-top: 5px solid #c9a84c;">
