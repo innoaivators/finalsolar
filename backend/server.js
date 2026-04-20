@@ -25,7 +25,8 @@ app.post('/api/enquiry', async (req, res) => {
   try {
     const data = await resend.emails.send({
       from: 'Metallica Enquiry <onboarding@resend.dev>',
-      to: ['info@Metallicakw.com'], // Using your verified Resend testing email
+      to: ['info@metallicakw.com'], // Using your verified Resend testing email (must match exactly)
+      reply_to: email,
       subject: `New Enquiry: ${productName}`,
       html: `
         <div style="font-family: sans-serif; padding: 20px; border: 1px solid #eee; border-top: 5px solid #c9a84c;">
@@ -41,6 +42,7 @@ app.post('/api/enquiry', async (req, res) => {
     });
 
     if (data.error) {
+      console.error('Resend Error (Enquiry):', data.error);
       return res.status(400).json({ error: data.error });
     }
 
@@ -57,7 +59,8 @@ app.post('/api/contact', async (req, res) => {
   try {
     const data = await resend.emails.send({
       from: 'Metallica Contact <onboarding@resend.dev>',
-      to: ['info@Metallicakw.com'], // testing email
+      to: ['info@metallicakw.com'], // testing email (must match exactly)
+      reply_to: email,
       subject: `New Contact Request from ${name}`,
       html: `
         <div style="font-family: sans-serif; padding: 20px; border: 1px solid #eee; border-top: 5px solid #001f3f;">
@@ -73,6 +76,7 @@ app.post('/api/contact', async (req, res) => {
     });
 
     if (data.error) {
+      console.error('Resend Error (Contact):', data.error);
       return res.status(400).json({ error: data.error });
     }
 
