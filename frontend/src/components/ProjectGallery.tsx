@@ -66,8 +66,12 @@ const useColumns = () => {
   return cols;
 };
 
-const ProjectGallery = ({ hideHeader = false }: { hideHeader?: boolean }) => {
+const ProjectGallery = ({ hideHeader = false, excludeCategories = [] }: { hideHeader?: boolean, excludeCategories?: string[] }) => {
   const columns = useColumns();
+
+  const filteredItems = projectItems.filter(item => 
+    !excludeCategories.includes(item.category)
+  );
 
   return (
     <section className="section-padding" style={{ background: "hsl(var(--gray-light))" }}>
@@ -81,7 +85,7 @@ const ProjectGallery = ({ hideHeader = false }: { hideHeader?: boolean }) => {
           </div>
         )}
 
-        <MasonryGallery items={projectItems} columns={columns} />
+        <MasonryGallery items={filteredItems} columns={columns} />
       </div>
     </section>
   );
