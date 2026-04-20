@@ -11,9 +11,6 @@ const serviceItems = [
   { label: "Hospitality Services", path: "/services/hospitality-services" },
   { label: "Logistics & Warehouse Management", path: "/services/logistics-warehouse-management" },
   { label: "Real Estate", path: "/services/real-estate" },
-];
-
-const projectItems = [
   { label: "Mechanical", path: "/projects/mechanical" },
   { label: "Civil", path: "/projects/civil" },
 ];
@@ -22,9 +19,7 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
-  const [projectsOpen, setProjectsOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
-  const [mobileProjectsOpen, setMobileProjectsOpen] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -33,7 +28,6 @@ const Navbar = () => {
       const target = e.target as HTMLElement;
       if (!target.closest(".desktop-dropdown")) {
         setServicesOpen(false);
-        setProjectsOpen(false);
       }
     };
     window.addEventListener("scroll", onScroll);
@@ -47,7 +41,6 @@ const Navbar = () => {
   useEffect(() => {
     setMobileOpen(false);
     setServicesOpen(false);
-    setProjectsOpen(false);
     window.scrollTo(0, 0);
   }, [location.pathname]);
 
@@ -98,10 +91,7 @@ const Navbar = () => {
           {/* Services Dropdown */}
           <div className="relative desktop-dropdown">
             <button
-              onClick={() => {
-                setServicesOpen(!servicesOpen);
-                setProjectsOpen(false);
-              }}
+              onClick={() => setServicesOpen(!servicesOpen)}
               className="nav-link navy-text py-2 flex items-center gap-1 whitespace-nowrap text-sm xl:text-base"
             >
               Services <ChevronDown size={14} className={`transition-transform duration-200 ${servicesOpen ? "rotate-180" : ""}`} />
@@ -109,32 +99,6 @@ const Navbar = () => {
             {servicesOpen && (
               <div className="absolute top-full left-0 w-72 bg-white/85 backdrop-blur-xl shadow-[0_10px_40px_rgba(0,0,0,0.1)] rounded-xl border border-white/50 py-2 animate-fade-in divide-y divide-gray-50/50 mt-1" style={{ animationDuration: "0.2s" }}>
                 {serviceItems.map((item) => (
-                  <Link
-                    key={item.path}
-                    to={item.path}
-                    className="block py-3 pl-5 pr-4 text-sm font-medium text-slate-700 hover:bg-gold/5 hover:text-gold hover:pl-7 transition-all duration-300 font-body"
-                  >
-                    {item.label}
-                  </Link>
-                ))}
-              </div>
-            )}
-          </div>
-
-          {/* Projects Dropdown */}
-          <div className="relative desktop-dropdown">
-            <button
-              onClick={() => {
-                setProjectsOpen(!projectsOpen);
-                setServicesOpen(false);
-              }}
-              className="nav-link navy-text py-2 flex items-center gap-1 whitespace-nowrap text-sm xl:text-base"
-            >
-              Projects <ChevronDown size={14} className={`transition-transform duration-200 ${projectsOpen ? "rotate-180" : ""}`} />
-            </button>
-            {projectsOpen && (
-              <div className="absolute top-full left-0 w-56 bg-white/85 backdrop-blur-xl shadow-[0_10px_40px_rgba(0,0,0,0.1)] rounded-xl border border-white/50 py-2 animate-fade-in divide-y divide-gray-50/50 mt-1" style={{ animationDuration: "0.2s" }}>
-                {projectItems.map((item) => (
                   <Link
                     key={item.path}
                     to={item.path}
@@ -179,24 +143,7 @@ const Navbar = () => {
               ))}
             </div>
           )}
-
-          {/* Mobile Projects */}
-          <button
-            onClick={() => setMobileProjectsOpen(!mobileProjectsOpen)}
-            className="w-full text-left px-6 py-3 nav-link navy-text flex items-center justify-between"
-          >
-            Projects <ChevronDown size={14} className={`transition-transform ${mobileProjectsOpen ? "rotate-180" : ""}`} />
-          </button>
-          {mobileProjectsOpen && (
-            <div className="bg-muted">
-              {projectItems.map((item) => (
-                <Link key={item.path} to={item.path} className="block px-10 py-2.5 text-sm navy-text hover:text-gold transition-colors font-body">
-                  {item.label}
-                </Link>
-              ))}
-            </div>
-          )}
-
+          {/* Contact Link */}
           <Link to="/contact" className="block w-full text-left px-6 py-3 nav-link navy-text">Contact Us</Link>
 
           {/* Social Links mobile */}
