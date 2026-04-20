@@ -13,6 +13,8 @@ import img15 from "@/assets/projects/proj_dsi_jebel_ali.webp";
 import img16 from "@/assets/projects/proj_ener_plastics.webp";
 import img18 from "@/assets/projects/proj_see_institute.webp";
 import img19 from "@/assets/projects/proj_thomsun.webp";
+import projectMech from "@/assets/project-mechanical.jpg";
+import projectCivil from "@/assets/project-civil.jpg";
 
 // WhatsApp Images
 import wa1 from "@/assets/projects/WhatsApp Image 2026-04-06 at 3.16.02 PM (1).jpeg";
@@ -45,6 +47,8 @@ const projectItems = [
   { image: img16, title: "Ener Plastics",               category: "Factory" },
   { image: img18, title: "SEE Institute",               category: "Education" },
   { image: img19, title: "Thomsun",                     category: "Commercial" },
+  { image: projectMech, title: "Mechanical Excellence",  category: "Mechanical" },
+  { image: projectCivil, title: "Civil Infrastructure",  category: "Civil" },
 ];
 
 const useColumns = () => {
@@ -62,19 +66,20 @@ const useColumns = () => {
   return cols;
 };
 
-const ProjectGallery = () => {
+const ProjectGallery = ({ hideHeader = false }: { hideHeader?: boolean }) => {
   const columns = useColumns();
 
   return (
     <section className="section-padding" style={{ background: "hsl(var(--gray-light))" }}>
       <div className="container mx-auto px-4">
         {/* Header */}
-        <div className="text-center mb-12">
-          <p className="section-title">OUR PORTFOLIO</p>
-          <h2 className="section-heading">Featured Projects</h2>
-          <div className="h-1 w-24 bg-gold mx-auto mt-4 rounded-full" />
-        </div>
-
+        {!hideHeader && (
+          <div className="text-center mb-12">
+            <p className="section-title">OUR PORTFOLIO</p>
+            <h2 className="section-heading">Featured Projects</h2>
+            <div className="h-1 w-24 bg-gold mx-auto mt-4 rounded-full" />
+          </div>
+        )}
 
         <MasonryGallery items={projectItems} columns={columns} />
       </div>

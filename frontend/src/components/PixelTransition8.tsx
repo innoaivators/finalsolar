@@ -1,4 +1,6 @@
 import { useState, useRef, useEffect, FC, useCallback } from "react";
+import { createPortal } from "react-dom";
+import { X } from "lucide-react";
 
 export interface MasonryItem {
   image: string;
@@ -114,6 +116,11 @@ const MasonryGallery: FC<MasonryGalleryProps> = ({ items, columns = 4 }) => {
     return () => window.removeEventListener("keydown", handler);
   }, []);
 
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   // Distribute into columns
   const columnArrays: MasonryItem[][] = Array.from({ length: columns }, () => []);
 
@@ -166,37 +173,38 @@ const MasonryGallery: FC<MasonryGalleryProps> = ({ items, columns = 4 }) => {
         ))}
       </div>
 
-      {/* Lightbox */}
-      {lightbox && (
+      {/* Lightbox via Portal */}
+      {mounted && lightbox && createPortal(
         <div
-          className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/90 backdrop-blur-sm p-4"
+          className="fixed inset-0 z-[99999] flex items-center justify-center bg-black/95 backdrop-blur-md p-4 sm:p-8"
           onClick={() => setLightbox(null)}
         >
           <div
-            className="relative max-w-4xl w-full"
-            style={{ animation: "fadeIn 0.25s ease" }}
+            className="relative max-w-5xl w-full"
+            style={{ animation: "fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1)" }}
             onClick={(e) => e.stopPropagation()}
           >
-            <img
-              src={lightbox.image}
-              alt={lightbox.title}
-              className="w-full max-h-[80vh] object-contain rounded-2xl shadow-2xl"
-            />
+            <div className="bg-navy/40 rounded-2xl overflow-hidden shadow-[0_0_50px_rgba(0,0,0,0.5)]">
+              <img
+                src={lightbox.image}
+                alt={lightbox.title}
+                className="w-full max-h-[85vh] object-contain"
+              />
+            </div>
             <button
               onClick={() => setLightbox(null)}
-              className="absolute top-3 right-3 w-9 h-9 rounded-full flex items-center justify-center text-white"
-              style={{ background: "rgba(0,0,0,0.5)" }}
+              className="absolute -top-12 sm:-top-4 -right-2 sm:-right-16 w-12 h-12 rounded-full flex items-center justify-center text-white hover:bg-white/10 hover:scale-110 transition-all border border-white/20"
+              style={{ backdropFilter: "blur(4px)" }}
             >
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-              </svg>
+              <X size={28} />
             </button>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
 
       <style>{`
-        @keyframes fadeIn { from { opacity:0; transform:scale(0.97); } to { opacity:1; transform:scale(1); } }
+        @keyframes fadeIn { from { opacity:0; transform:scale(0.95); } to { opacity:1; transform:scale(1); } }
       `}</style>
     </>
   );

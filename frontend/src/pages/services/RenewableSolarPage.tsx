@@ -135,7 +135,7 @@ const RenewableSolarPage = () => (
             </div>
         </div>
         <div className="mt-20">
-            <ProjectGallery />
+            <ProjectGallery hideHeader={true} />
         </div>
     </ServicePageTemplate>
 );

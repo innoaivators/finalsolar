@@ -32,6 +32,7 @@ const SolarPumpsDetailed = lazy(() => import("./pages/services/SolarPumpsDetaile
 const SolarStreetLightsDetailed = lazy(() => import("./pages/services/SolarStreetLightsDetailed.tsx"));
 const SolarWaterHeatersDetailed = lazy(() => import("./pages/services/SolarWaterHeatersDetailed.tsx"));
 const SolarBatteriesDetailed = lazy(() => import("./pages/services/SolarBatteriesDetailed.tsx"));
+const ProjectsPage = lazy(() => import("./pages/ProjectsPage.tsx"));
 
 // Loading fallback component
 const PageLoader = () => (
@@ -86,6 +87,7 @@ const App = () => {
                   <Route path="/services/real-estate" element={<RealEstatePage />} />
                   <Route path="/projects/mechanical" element={<MechanicalPage />} />
                   <Route path="/projects/civil" element={<CivilPage />} />
+                  <Route path="/projects" element={<ProjectsPage />} />
                   <Route path="*" element={<NotFound />} />
                 </Routes>
               </Suspense>

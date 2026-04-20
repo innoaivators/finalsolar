@@ -111,6 +111,7 @@ const Navbar = () => {
             )}
           </div>
 
+          <Link to="/projects" className="nav-link navy-text py-2 whitespace-nowrap text-sm xl:text-base">Projects</Link>
           <Link to="/contact" className="nav-link navy-text py-2 whitespace-nowrap text-sm xl:text-base">Contact Us</Link>
         </div>
 
@@ -143,6 +144,9 @@ const Navbar = () => {
               ))}
             </div>
           )}
+          {/* Projects Link */}
+          <Link to="/projects" className="block w-full text-left px-6 py-3 nav-link navy-text">Projects</Link>
+          
           {/* Contact Link */}
           <Link to="/contact" className="block w-full text-left px-6 py-3 nav-link navy-text">Contact Us</Link>
 
