@@ -10,7 +10,7 @@ const InitialLoader = ({ onComplete }: { onComplete: () => void }) => {
     const timer = setTimeout(() => {
       setFadingOut(true);
       setTimeout(onComplete, 500); // Wait for fade out animation
-    }, 2500);
+    }, 1000);
 
     return () => clearTimeout(timer);
   }, [onComplete]);
