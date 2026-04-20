@@ -8,6 +8,7 @@ import pumpImg from "@/assets/pump_60hp_unbranded.png";
 import streetLightImg from "@/assets/street_light_all_in_one_new.png";
 import heaterImg from "@/assets/product_heater_kamal.png";
 import batteryImg from "@/assets/product_battery_microtek.png";
+import ProjectGallery from "@/components/ProjectGallery";
 
 import { Shield, Zap, Sun, Battery, Lightbulb, Droplets } from "lucide-react";
 
@@ -132,6 +133,9 @@ const RenewableSolarPage = () => (
                 </Link>
 
             </div>
+        </div>
+        <div className="mt-20">
+            <ProjectGallery />
         </div>
     </ServicePageTemplate>
 );
