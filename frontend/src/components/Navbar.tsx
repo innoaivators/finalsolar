@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown, Instagram, Facebook, Linkedin } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import logo from "@/assets/nav_logo.jpeg";
 import footerLogo from "@/assets/footer_logo.png";
@@ -198,6 +198,19 @@ const Navbar = () => {
           )}
 
           <Link to="/contact" className="block w-full text-left px-6 py-3 nav-link navy-text">Contact Us</Link>
+
+          {/* Social Links mobile */}
+          <div className="flex items-center gap-4 px-6 pt-4 border-t border-slate-100 mt-2">
+            <a href="https://www.instagram.com/metallicakuwait/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full flex items-center justify-center bg-gold/10 text-gold hover:bg-gold hover:text-white transition-all">
+              <Instagram size={20} />
+            </a>
+            <a href="#" className="w-10 h-10 rounded-full flex items-center justify-center bg-gold/10 text-gold hover:bg-gold hover:text-white transition-all">
+              <Facebook size={20} />
+            </a>
+            <a href="#" className="w-10 h-10 rounded-full flex items-center justify-center bg-gold/10 text-gold hover:bg-gold hover:text-white transition-all">
+              <Linkedin size={20} />
+            </a>
+          </div>
         </div>
       )}
     </nav>

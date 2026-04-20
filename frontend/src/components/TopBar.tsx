@@ -36,6 +36,7 @@ const TopBar = () => {
             <a href="#" className="w-7 h-7 rounded-full flex items-center justify-center bg-gold text-navy hover:bg-gold-dark transition-colors">
               <Facebook size={13} />
             </a>
+            {/* Social Links v1.1 */}
             <a href="https://www.instagram.com/metallicakuwait/" target="_blank" rel="noopener noreferrer" className="w-7 h-7 rounded-full flex items-center justify-center bg-gold text-navy hover:bg-gold-dark transition-colors">
               <Instagram size={13} />
             </a>
