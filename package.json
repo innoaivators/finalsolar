@@ -10,6 +10,8 @@
     "build:backend": "cd backend && npm install"
   },
   "optionalDependencies": {
-    "@rollup/rollup-linux-x64-gnu": "^4.60.2"
+    "@rollup/rollup-linux-x64-gnu": "^4.60.2",
+    "@swc/core-linux-x64-gnu": "^1.15.30",
+    "@swc/core-linux-x64-musl": "^1.15.30"
   }
 }
