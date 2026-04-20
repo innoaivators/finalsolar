@@ -57,7 +57,7 @@ app.post('/api/contact', async (req, res) => {
   try {
     const data = await resend.emails.send({
       from: 'Metallica Contact <onboarding@resend.dev>',
-      to: ['pr.jayabalaji@gmail.com'], // testing email
+      to: ['info@Metallicakw.com'], // testing email
       subject: `New Contact Request from ${name}`,
       html: `
         <div style="font-family: sans-serif; padding: 20px; border: 1px solid #eee; border-top: 5px solid #001f3f;">
