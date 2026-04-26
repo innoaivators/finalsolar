@@ -186,7 +186,7 @@ const ContactSection = () => {
                 <label className="text-xs sm:text-sm font-bold text-navy/80 ml-1">Phone Number</label>
                 <input
                   type="tel"
-                  placeholder="+965 XXXX XXXX"
+                  placeholder="Enter your number"
                   value={form.phone}
                   onChange={(e) => setForm({ ...form, phone: e.target.value })}
                   className="w-full px-4 py-3 sm:px-5 sm:py-4 rounded-xl border border-slate-300 bg-white text-navy font-medium text-xs sm:text-sm placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold hover:border-slate-400 transition-all shadow-sm"
@@ -222,7 +222,7 @@ const ContactSection = () => {
               <p className="text-navy/60 mb-8">
                 Thank you for reaching out. Our team will get back to you shortly.
               </p>
-              <button 
+              <button
                 onClick={() => setShowMethodDialog(false)}
                 className="w-full bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-2xl font-bold transition-all duration-300 shadow-lg shadow-green-500/20"
               >
@@ -237,7 +237,7 @@ const ContactSection = () => {
                   How would you like to send this inquiry?
                 </DialogDescription>
               </DialogHeader>
-              
+
               <div className="grid gap-4 py-6">
                 {submitStatus === 'error' && (
                   <div className="bg-red-50 text-red-600 p-3 rounded-lg text-sm border border-red-100 text-center">
