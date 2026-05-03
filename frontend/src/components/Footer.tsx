@@ -147,8 +147,19 @@ const Footer = () => {
 
       {/* Bottom */}
       <div className="border-t border-primary-foreground/10 py-5">
-        <div className="container mx-auto px-4 text-center text-xs text-primary-foreground/50 font-body">
-          Copyright © 2024 Metallica. All rights reserved.
+        <div className="container mx-auto px-4 flex flex-col sm:flex-row justify-between items-center gap-4 text-center text-xs text-primary-foreground/50 font-body">
+          <span>Copyright © 2024 Metallica. All rights reserved.</span>
+          <span>
+            Design and developed by{" "}
+            <a 
+              href="https://www.innoaivators.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="hover:text-gold transition-colors text-white"
+            >
+              Innoaivators
+            </a>
+          </span>
         </div>
       </div>
     </footer>
