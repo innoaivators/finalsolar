@@ -22,6 +22,9 @@ const Navbar = () => {
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const location = useLocation();
 
+  const activeService = serviceItems.find(item => item.path === location.pathname);
+  const servicesLabel = activeService && location.pathname.startsWith('/services') ? activeService.label : "Services";
+
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
     const onClickOutside = (e: MouseEvent) => {
@@ -84,35 +87,43 @@ const Navbar = () => {
 
         {/* Desktop */}
         <div className="hidden lg:flex items-center gap-4 xl:gap-7">
-          <Link to="/" className="nav-link navy-text py-2 whitespace-nowrap text-sm xl:text-base">Home</Link>
-          <Link to="/about" className="nav-link navy-text py-2 whitespace-nowrap text-sm xl:text-base">About Us</Link>
-          <Link to="/management" className="nav-link navy-text py-2 whitespace-nowrap text-sm xl:text-base">Management</Link>
+          <Link to="/" className={`nav-link navy-text py-2 whitespace-nowrap text-sm xl:text-base ${location.pathname === '/' ? 'active' : ''}`}>Home</Link>
+          <Link to="/about" className={`nav-link navy-text py-2 whitespace-nowrap text-sm xl:text-base ${location.pathname === '/about' ? 'active' : ''}`}>About Us</Link>
+          <Link to="/management" className={`nav-link navy-text py-2 whitespace-nowrap text-sm xl:text-base ${location.pathname === '/management' ? 'active' : ''}`}>Management</Link>
 
           {/* Services Dropdown */}
-          <div className="relative desktop-dropdown">
+          <div 
+            className="relative desktop-dropdown"
+            onMouseEnter={() => setServicesOpen(true)}
+            onMouseLeave={() => setServicesOpen(false)}
+          >
             <button
               onClick={() => setServicesOpen(!servicesOpen)}
-              className="nav-link navy-text py-2 flex items-center gap-1 whitespace-nowrap text-sm xl:text-base"
+              className={`nav-link navy-text py-2 flex items-center gap-1 whitespace-nowrap text-sm xl:text-base ${location.pathname.startsWith('/services') ? 'active' : ''}`}
             >
-              Services <ChevronDown size={14} className={`transition-transform duration-200 ${servicesOpen ? "rotate-180" : ""}`} />
+              {servicesLabel} <ChevronDown size={14} className={`transition-transform duration-200 ${servicesOpen ? "rotate-180" : ""}`} />
             </button>
             {servicesOpen && (
-              <div className="absolute top-full left-0 w-72 bg-white/85 backdrop-blur-xl shadow-[0_10px_40px_rgba(0,0,0,0.1)] rounded-xl border border-white/50 py-2 animate-fade-in divide-y divide-gray-50/50 mt-1" style={{ animationDuration: "0.2s" }}>
+              <div className="absolute top-full left-0 w-72 pt-1 animate-fade-in" style={{ animationDuration: "0.2s" }}>
+                <div className="bg-white/85 backdrop-blur-xl shadow-[0_10px_40px_rgba(0,0,0,0.1)] rounded-xl border border-white/50 py-2 divide-y divide-gray-50/50">
                 {serviceItems.map((item) => (
                   <Link
                     key={item.path}
                     to={item.path}
-                    className="block py-3 pl-5 pr-4 text-sm font-medium text-slate-700 hover:bg-gold/5 hover:text-gold hover:pl-7 transition-all duration-300 font-body"
+                    className={`block py-3 pl-5 pr-4 text-sm font-medium transition-all duration-300 font-body ${
+                      location.pathname === item.path ? 'bg-gold/5 text-gold pl-7' : 'text-slate-700 hover:bg-gold/5 hover:text-gold hover:pl-7'
+                    }`}
                   >
                     {item.label}
                   </Link>
                 ))}
+                </div>
               </div>
             )}
           </div>
 
-          <Link to="/projects" className="nav-link navy-text py-2 whitespace-nowrap text-sm xl:text-base">Projects</Link>
-          <Link to="/contact" className="nav-link navy-text py-2 whitespace-nowrap text-sm xl:text-base">Contact Us</Link>
+          <Link to="/projects" className={`nav-link navy-text py-2 whitespace-nowrap text-sm xl:text-base ${location.pathname.startsWith('/projects') ? 'active' : ''}`}>Projects</Link>
+          <Link to="/contact" className={`nav-link navy-text py-2 whitespace-nowrap text-sm xl:text-base ${location.pathname === '/contact' ? 'active' : ''}`}>Contact Us</Link>
         </div>
 
         {/* Mobile toggle */}
@@ -124,31 +135,31 @@ const Navbar = () => {
       {/* Mobile menu */}
       {mobileOpen && (
         <div className="lg:hidden bg-white/95 backdrop-blur-lg border-t border-slate-100 pb-4 max-h-[80vh] overflow-y-auto w-full absolute shadow-2xl">
-          <Link to="/" className="block w-full text-left px-6 py-3 nav-link navy-text">Home</Link>
-          <Link to="/about" className="block w-full text-left px-6 py-3 nav-link navy-text">About Us</Link>
-          <Link to="/management" className="block w-full text-left px-6 py-3 nav-link navy-text">Management</Link>
+          <Link to="/" className={`block w-full text-left px-6 py-3 nav-link navy-text ${location.pathname === '/' ? 'active' : ''}`}>Home</Link>
+          <Link to="/about" className={`block w-full text-left px-6 py-3 nav-link navy-text ${location.pathname === '/about' ? 'active' : ''}`}>About Us</Link>
+          <Link to="/management" className={`block w-full text-left px-6 py-3 nav-link navy-text ${location.pathname === '/management' ? 'active' : ''}`}>Management</Link>
 
           {/* Mobile Services */}
           <button
             onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
-            className="w-full text-left px-6 py-3 nav-link navy-text flex items-center justify-between"
+            className={`w-full text-left px-6 py-3 nav-link navy-text flex items-center justify-between ${location.pathname.startsWith('/services') ? 'active' : ''}`}
           >
-            Services <ChevronDown size={14} className={`transition-transform ${mobileServicesOpen ? "rotate-180" : ""}`} />
+            {servicesLabel} <ChevronDown size={14} className={`transition-transform ${mobileServicesOpen ? "rotate-180" : ""}`} />
           </button>
           {mobileServicesOpen && (
             <div className="bg-muted">
               {serviceItems.map((item) => (
-                <Link key={item.path} to={item.path} className="block px-10 py-2.5 text-sm navy-text hover:text-gold transition-colors font-body">
+                <Link key={item.path} to={item.path} className={`block px-10 py-2.5 text-sm transition-colors font-body ${location.pathname === item.path ? 'text-gold' : 'navy-text hover:text-gold'}`}>
                   {item.label}
                 </Link>
               ))}
             </div>
           )}
           {/* Projects Link */}
-          <Link to="/projects" className="block w-full text-left px-6 py-3 nav-link navy-text">Projects</Link>
+          <Link to="/projects" className={`block w-full text-left px-6 py-3 nav-link navy-text ${location.pathname.startsWith('/projects') ? 'active' : ''}`}>Projects</Link>
           
           {/* Contact Link */}
-          <Link to="/contact" className="block w-full text-left px-6 py-3 nav-link navy-text">Contact Us</Link>
+          <Link to="/contact" className={`block w-full text-left px-6 py-3 nav-link navy-text ${location.pathname === '/contact' ? 'active' : ''}`}>Contact Us</Link>
 
           {/* Social Links mobile */}
           <div className="flex items-center gap-4 px-6 pt-4 border-t border-slate-100 mt-2">

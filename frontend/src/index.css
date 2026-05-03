@@ -129,7 +129,8 @@
     background: hsl(var(--gold));
   }
 
-  .nav-link:hover::after {
+  .nav-link:hover::after,
+  .nav-link.active::after {
     @apply scale-x-100 origin-bottom-left;
   }
 

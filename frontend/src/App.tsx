@@ -9,7 +9,8 @@ import Lottie from "lottie-react";
 import loadingAnimation from "@/assets/animations/Loading Animation Looped.json";
 import logo from "@/assets/logo_icon.png";
 import InitialLoader from "@/components/InitialLoader";
-
+import Lenis from "lenis";
+import "lenis/dist/lenis.css";
 // Lazy-loaded pages for performance (code-splitting)
 const Index = lazy(() => import("./pages/Index.tsx"));
 const AboutPage = lazy(() => import("./pages/AboutPage.tsx"));
@@ -58,6 +59,21 @@ const queryClient = new QueryClient();
 
 const App = () => {
   const [showInitialLoader, setShowInitialLoader] = useState(true);
+
+  useEffect(() => {
+    const lenis = new Lenis();
+
+    function raf(time: number) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+
+    return () => {
+      lenis.destroy();
+    };
+  }, []);
 
   return (
     <QueryClientProvider client={queryClient}>
