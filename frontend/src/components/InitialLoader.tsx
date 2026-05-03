@@ -7,12 +7,26 @@ const InitialLoader = ({ onComplete }: { onComplete: () => void }) => {
   const [fadingOut, setFadingOut] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setFadingOut(true);
-      setTimeout(onComplete, 500); // Wait for fade out animation
-    }, 1000);
+    const finishLoading = () => {
+      // Small delay for smooth UX after everything is loaded
+      setTimeout(() => {
+        setFadingOut(true);
+        setTimeout(onComplete, 500); // Wait for fade out animation
+      }, 300);
+    };
 
-    return () => clearTimeout(timer);
+    if (document.readyState === 'complete') {
+      finishLoading();
+    } else {
+      window.addEventListener('load', finishLoading);
+      // Fallback in case load takes too long (10 seconds max)
+      const fallbackTimer = setTimeout(finishLoading, 10000);
+      
+      return () => {
+        window.removeEventListener('load', finishLoading);
+        clearTimeout(fallbackTimer);
+      };
+    }
   }, [onComplete]);
 
   return (
