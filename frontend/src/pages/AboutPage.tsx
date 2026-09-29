@@ -23,27 +23,27 @@ const AboutPage = () => {
               </h2>
               <div className="space-y-6 lg:space-y-14 text-muted-foreground leading-relaxed font-body text-base md:text-lg">
                 <p>
-                  <strong className="navy-text">City Solar</strong> is a recognized leader in sustainable energy solutions. 
-                  With 10 years of experience, we have successfully completed over 2000 projects, 
-                  totaling an impressive <span className="gold-text font-bold">80MWp</span> in installed capacity.
+                  <strong className="navy-text">Metallica General Trading &amp; Contracting Co. W.L.L.</strong> is a recognized leader in Renewable energy solutions, delivering reliable, cost-effective, and sustainable renewable energy systems for commercial, industrial, and utility-scale applications.
                 </p>
                 <p>
-                  Our commitment to excellence has resulted in annual savings of 
-                  <span className="navy-text font-bold"> AED 60 million</span> for our clients. 
-                  We are proud to hold the Platinum ranking by DEWA, a testament to our unwavering commitment to quality.
+                  With over <span className="gold-text font-bold">15 years</span> of experience in the solar power industry, our team has successfully designed, supplied, installed, commissioned, and maintained numerous solar projects across various sectors. Our expertise enables us to provide customized solutions that maximize energy savings while ensuring long-term performance and reliability.
                 </p>
               </div>
 
               <div className="mt-12 lg:mt-28">
                 <h3 className="text-2xl font-heading font-bold navy-text mb-6 uppercase tracking-wider border-l-4 border-gold pl-4">
-                  SOLAR ENERGY SAVINGS
+                  OUR SERVICES
                 </h3>
-                <p className="text-muted-foreground mb-8 lg:mb-12 text-lg italic">Powering Your Home and Your Wallet</p>
+                <p className="text-muted-foreground mb-8 lg:mb-12 text-lg italic">Comprehensive Renewable Energy Solutions</p>
                 <div className="space-y-4 lg:space-y-8">
                   {[
-                    "Disciplined Workmanship and Commitment to Timelines",
-                    "Flexible Payment Terms and Finance Offers",
-                    "Best-in-class Equipment and Warranties",
+                    "Engineering, Procurement & Construction (EPC) of Solar PV Systems",
+                    "Rooftop Solar Power Plants",
+                    "Ground-Mounted Solar Projects",
+                    "Battery Energy Storage Systems (BESS)",
+                    "Solar Carports and Canopies",
+                    "Operation & Maintenance (O&M) Services",
+                    "Solar Plant Performance Monitoring",
                   ].map((item) => (
                     <div key={item} className="flex items-center gap-3 sm:gap-4 group">
                       <div className="bg-gold/10 p-2 rounded-full group-hover:bg-gold/20 transition-colors shrink-0">
@@ -62,8 +62,8 @@ const AboutPage = () => {
                   <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-cyan-600 sm:w-[32px] sm:h-[32px]"><path d="M11 15h2a2 2 0 1 0 0-4h-3c-.6 0-1.1.2-1.4.6L3 17"/><path d="m7 21 1.6-1.4c.3-.4.8-.6 1.4-.6h4c1.1 0 2.1-.4 2.8-1.2l4.6-4.4a2 2 0 0 0-2.8-2.8L13 15"/><path d="M14 6.5a2 2 0 1 0-4 0a2 2 0 0 0 4 0Z"/><path d="M18 2h-3a2 2 0 0 0-2 2v2"/><path d="M7 2h3a2 2 0 0 1 2 2v2"/></svg>
                 </div>
                 <div>
-                  <h4 className="text-2xl sm:text-3xl font-heading font-extrabold navy-text">Up to 100%</h4>
-                  <p className="text-muted-foreground font-body font-bold text-xs sm:text-sm tracking-wide sm:tracking-widest uppercase">Financing Available</p>
+                  <h4 className="text-2xl sm:text-3xl font-heading font-extrabold navy-text">15+ Years</h4>
+                  <p className="text-muted-foreground font-body font-bold text-xs sm:text-sm tracking-wide sm:tracking-widest uppercase">Industry Experience</p>
                 </div>
               </div>
 
@@ -74,8 +74,8 @@ const AboutPage = () => {
                   <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-amber-600 sm:w-[32px] sm:h-[32px]"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M7 7h10"/><path d="M7 12h10"/><path d="M7 17h10"/></svg>
                 </div>
                 <div>
-                  <h4 className="text-2xl sm:text-3xl font-heading font-extrabold navy-text">Thousands</h4>
-                  <p className="text-muted-foreground font-body font-bold text-xs sm:text-sm tracking-wide sm:tracking-widest uppercase">Of Dirhams Saved</p>
+                  <h4 className="text-2xl sm:text-3xl font-heading font-extrabold navy-text">Commercial</h4>
+                  <p className="text-muted-foreground font-body font-bold text-xs sm:text-sm tracking-wide sm:tracking-widest uppercase">Industrial &amp; Utility-Scale</p>
                 </div>
               </div>
 
@@ -86,8 +86,8 @@ const AboutPage = () => {
                   <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-blue-600 sm:w-[32px] sm:h-[32px]"><path d="M12 21a9 9 0 1 0-9-9c0 1.48.35 2.89 1.08 4.16L3 21l4.84-1.08C9.11 20.65 10.52 21 12 21Z"/><path d="M9 13a3 3 0 1 0 6 0a3 3 0 0 0-6 0Z"/><path d="m11.5 11-1.5 5h1a2 2 0 0 1 2 2"/></svg>
                 </div>
                 <div>
-                  <h4 className="text-2xl sm:text-3xl font-heading font-extrabold navy-text">5 Star</h4>
-                  <p className="text-muted-foreground font-body font-bold text-xs sm:text-sm tracking-wide sm:tracking-widest uppercase">Customer Ratings</p>
+                  <h4 className="text-2xl sm:text-3xl font-heading font-extrabold navy-text">EPC</h4>
+                  <p className="text-muted-foreground font-body font-bold text-xs sm:text-sm tracking-wide sm:tracking-widest uppercase">Full Turnkey Solutions</p>
                 </div>
               </div>
 
@@ -98,8 +98,8 @@ const AboutPage = () => {
                   <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-teal-600 sm:w-[32px] sm:h-[32px]"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg>
                 </div>
                 <div>
-                  <h4 className="text-2xl sm:text-3xl font-heading font-extrabold navy-text">30 Years</h4>
-                  <p className="text-muted-foreground font-body font-bold text-xs sm:text-sm tracking-wide sm:tracking-widest uppercase">Extended Warranty</p>
+                  <h4 className="text-2xl sm:text-3xl font-heading font-extrabold navy-text">O&amp;M</h4>
+                  <p className="text-muted-foreground font-body font-bold text-xs sm:text-sm tracking-wide sm:tracking-widest uppercase">Operation &amp; Maintenance</p>
                 </div>
               </div>
 
